@@ -28,6 +28,14 @@
     border-radius: 10px; /* 스크롤바 둥근 모서리 반경 조정 */
     border: 2px solid var(--primary);
   }
+
+  #root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100svh;
+    padding: 10px;
+  }
 }
 
 @tailwind components;
