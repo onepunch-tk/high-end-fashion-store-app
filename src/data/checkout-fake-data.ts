@@ -1,6 +1,6 @@
 export const checkoutFakeData = [
   {
-    title: "Order Summary",
+    title: "Delivery",
     subscription: "UPS International - Express Shipping",
   },
   {
