@@ -7,7 +7,10 @@ function App() {
   return (
     <div className="w-[450px] h-[95%] rounded-md shadow-xl flex flex-col">
       <Header className="flex justify-between items-center p-5 rounded-t-md" />
-      <InfoCard className="flex justify-between p-5 items-center bg-neutral-900" />
+      <InfoCard
+        className="flex justify-between p-5 items-center bg-neutral-900"
+        isMyCart={true}
+      />
       <Checkout />
       <Footer
         content="Proceed to the next step"

@@ -1,15 +1,27 @@
 import { InfoDate } from "./(info-card)/InfoDate.tsx";
 import { WithClassNameProps } from "../types/with-classname.props.ts";
 import { CircleLine } from "./(info-card)/CircleLine.tsx";
+import { Price } from "./Price.tsx";
 
-export function InfoCard({ className }: WithClassNameProps) {
+interface InfoCardProps extends WithClassNameProps {
+  isMyCart?: boolean;
+}
+
+export function InfoCard({ className, isMyCart = false }: InfoCardProps) {
   return (
     <section className={className}>
-      <InfoDate date="01/02" title="Information" />
-      <CircleLine
-        isEmpty={true}
-        className="flex justify-between items-center"
-      />
+      {!isMyCart ? <InfoDate date="01/02" title="Information" /> : <div />}
+      {isMyCart ? (
+        <Price
+          className="flex flex-col justify-between items-end"
+          // priceColor="black"
+        />
+      ) : (
+        <CircleLine
+          isEmpty={true}
+          className="flex justify-between items-center"
+        />
+      )}
     </section>
   );
 }
